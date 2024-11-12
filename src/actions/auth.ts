@@ -37,23 +37,6 @@ const signUpAction = async (formData: FormData) => {
   }
 };
 
-// const signInAction = async (formData: FormData) => {
-//   const email = formData.get("email") as string;
-//   const password = formData.get("password") as string;
-//   const supabase = await createClient();
-
-//   const { error } = await supabase.auth.signInWithPassword({
-//     email,
-//     password,
-//   });
-
-//   if (error) {
-//     return encodedRedirect("error", PATHS.signInPath, error.message);
-//   }
-
-//   return redirect(PATHS.dashboardPath);
-// };
-
 const signInAction = async (formData: {
   email: string;
   password: string;
@@ -66,12 +49,6 @@ const signInAction = async (formData: {
       email,
       password,
     });
-
-    // if (error) {
-    //   return encodedRedirect("error", PATHS.signInPath, error.message);
-    // }
-
-    // return redirect(PATHS.dashboardPath);
 
     return {
       data: null,
